@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+    {% include "../layout/top.html" %}
+    <div id="wrap">
+        <div class="container1200">
+            <form action="/board/modify" method="POST" class="textBox">
+                <input type="hidden" name="idx" value="{{modify.idx}}">
+                <ul>
+                    <li>글제목: <input type="text" name='subject' class='inputStyle' id="subjectBox"
+                            value="{{modify.subject}}"></li>
+                    <li>작성자:<input type="text" name='id' class='inputStyle' id="idBox" value="{{modify.id}}"></li>
+                    <li><textarea type="text" name='content' class='inputStyle'>{{modify.content}}</textarea></li>
+                </ul>
+                <div class="btnBox">
+                    <input type="submit" class="boardBtn" value="수정">
+                    <a href="/board/view?idx={{modify.idx}}" class="boardBtn">취소</a>
+                </div>
+            </form>
+            {% include "../layout/right.html" %}  
+            {% include "../layout/left.html" %} 
+        </div>
+    </div>
+
+</body>
+
+</html>

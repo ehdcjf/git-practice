@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+  {% include "../layout/top.html" %}
+  <div id="wrap">
+    <div class="container1200">
+      <div class="textBox">
+        <ul>
+          <li>글제목: {{list.subject}}</li>
+          <li>작성자: {{list.id}}</li>
+          <li>조회수: {{list.hit}}</li>
+          <li>작성일: {{list.today}}</li>
+          <li>{{list.content}}</li>
+        </ul>
+        <div class="btnBox">
+          <a href="/board/list?page={{page}}" class="boardBtn">글목록</a>
+          <a href="/board/modify?idx={{list.idx}}" class="boardBtn">수정하기</a>
+          <a href="/board/delete?idx={{list.idx}}" class="boardBtn">삭제하기</a>
+        </div>
+      </div>
+      {% include "../layout/right.html" %}  
+      {% include "../layout/left.html" %} 
+    </div>
+  </div>
+
+</body>
+
+
+</html>

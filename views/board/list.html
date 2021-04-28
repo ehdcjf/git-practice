@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  {% include "../layout/top.html" %}
+  <div id="wrap">
+    <div class="container1200">
+      
+      <table>
+              <th>번호</th>
+              <th>제목</th>
+              <th>작성자</th>
+              <th>날짜</th>
+              <th>조회수</th>
+          {% for item in list %}
+          <tr id='tableList'>
+              <td>{{item.number}}</td>
+              <td><a href="/board/view?idx={{item.idx}}">{{item.subject}}</a></td>
+              <td>{{item.id}}</td>
+              <td>{{item.today}}</td>
+              <td>{{item.hit}}</td>
+          </tr>
+          {% endfor %}
+
+      </table>
+      <div class="btnBox">
+        <a href="/board/write" class="boardBtn">글쓰기</a>
+      </div>
+      <div id="pagenation">
+
+        {% if pagiBlock!=0 %}
+        <a href="/board/list?page=1" class='pagination'>처음</a>
+        <a href="/board/list?page={{prev}}" class='pagination'>이전</a>
+        {% endif %}
+
+        {% for ele in arr[pagiBlock] %}
+          {% if ele==page %}
+            <a href="/board/list?page={{ele}}" class='pagination nowPage'>{{ele}}</a>
+          {% else %}
+            <a href="/board/list?page={{ele}}" class='pagination'>{{ele}}</a>
+          {% endif %}
+        {% endfor %}
+
+        {% if pagiBlock!=arr.length-1 %}
+        <a href="/board/list?page={{next}}" class='pagination'>다음</a>
+        <a href="/board/list?page={{last}}" class='pagination'>끝</a>
+        {% endif %}
+
+      </div>
+
+      {% include "../layout/right.html" %}  
+      {% include "../layout/left.html" %}  
+    </div>
+  </div>
+</body>
+</html>

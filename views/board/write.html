@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="container1200">
+            {% include "../layout/top.html" %}
+        
+                <form action="/board/write" method="POST" class="textBox">
+
+                    <ul>
+                        <li>글제목: <input type="text" name='subject' id="subjectBox" class='inputStyle'></li>
+                        <li>작성자: <input type="text" name='id' id ="idBox" class='inputStyle'></li>
+                        <li><textarea type="text" name='content'  class='inputStyle'></textarea></li>
+                    </ul>
+                    <div class="btnBox">
+                        <input type="submit" class="boardBtn" value="글쓰기">
+                        <a href="/board/list?page=1" class="boardBtn">글목록</a>
+                    </div>
+                </form>
+                {% include "../layout/right.html" %}  
+                {% include "../layout/left.html" %} 
+        </div>
+    </div>
+</body>
+
+
+</html>

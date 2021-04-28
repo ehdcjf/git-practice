@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#wrap {
+  width: 100%;
+}
+
+.container1200 {
+  position: relative;
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.btnBox {
+  margin: 20px auto;
+  padding-right: 60px;
+  box-sizing: border-box;
+  text-align: right;
+}
+
+.textBox {
+  margin: 15px auto 0;
+  padding: 33px 68px 40px;
+  border: 2px solid #d5d5d5;
+}
+
+textarea {
+  width: 1000px;
+  height: 550px;
+  margin: 0 auto;
+}
+
+.textBox > ul > li {
+  margin-top: 10px;
+}
+
+table {
+  margin: 0 auto;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+#tableList > td {
+  text-align: center;
+  font-size: 18px;
+}
+
+th {
+  width: 200px;
+  height: 50px;
+  border-bottom: 1px solid black;
+}
+
+th:nth-child(1) {
+  width: 60px;
+}
+
+th:nth-child(2) {
+  width: 650px;
+}
+
+th:nth-child(3) {
+  width: 150px;
+}
+
+th:nth-child(4) {
+  width: 100px;
+}
+
+th:nth-child(5) {
+  width: 60px;
+}
+
+#goList {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  font-weight: 800;
+}
+
+.inputStyle {
+  border: 2px solid #d5d5d5;
+  padding: 5px;
+  font-size: 20px;
+}
+
+#top {
+  width: 430px;
+  height: 230px;
+  margin: 20px auto 50px;
+  background-image: url(/css/img/2601FC38592A35A116.gif);
+}
+
+#right {
+  position: absolute;
+  right: 0;
+  bottom: -600px;
+  width: 285px;
+  height: 590px;
+  margin: 0 auto;
+  background-image: url(/css/img/b261b377fb.jpg);
+  background-size: cover;
+}
+
+#left {
+  position: absolute;
+  left: 0;
+  bottom: -480px;
+  width: 323px;
+  height: 480px;
+  margin: 0 auto;
+  background-image: url(/css/img/covidflower.jpg);
+  background-size: cover;
+}
+
+.boardBtn {
+  display: inline-block;
+  margin: 0 7px;
+  width: 90px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: pink;
+  color: black;
+  font-size: 20px;
+  line-height: 50px;
+  text-align: center;
+  border: none;
+}
+
+#subjectBox {
+  width: 800px;
+}
+
+#idBox {
+  width: 250px;
+}
+
+#pagenation {
+  width: 1200px;
+  height: 50px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.nowPage {
+  background: pink;
+  border: 1px solid black;
+}
+
+.pagination {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 50px;
+  box-sizing: border-box;
+}
+
+.pagination:hover {
+  border: 1px solid black;
+  background-color: #999;
+}
