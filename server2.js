@@ -1,31 +1,31 @@
-//깃 연습중 
+
 const express = require('express');
-const nunjucks = require('nunjucks');
-const app =express(); 
-const port =3002; 
+const app = express();
 const main = require('./routes/index');
 const board = require('./routes/board');
+const nunjucks = require('nunjucks');
 const bodyParser = require('body-parser');
-const mysql = require('mysql'); 
+const mysql = require('mysql');
+const port = 3002;
 
-app.set('view engine', 'html'); 
-nunjucks.configure('views',{
-  express:app, 
+app.set('view engine', 'html');
+nunjucks.configure('views', {
+  express: app,
 });
 
-let connection = mysql.createConnection({
-  host:'localhost',
-  user:'root',
-  password:'1234',
-  database:'homepazi',
-});
+// let connection = mysql.createConnection({
+//   host: 'localhost',
+//   user: 'root',
+//   password: '1234',
+//   database: 'homepazi',
+// });
+// ``
+// connection.connect();
 
-connection.connect(); 
-
-app.use(express.static('public')); 
-app.use(bodyParser.urlencoded({extended:false})); 
-app.use('/',main); 
-app.use('/board',board); 
+app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use('/', main);
+app.use('/board', board);
 // /를 거치면 main에 있는 것을 실행하겠다. 
 
 /*
@@ -55,7 +55,7 @@ use에 경로값이 / 일 때
 //   next(); 
 // })
 
-app.get('/',(req,res)=>{
+app.get('/', (req, res) => {
 
   res.render('index.html');
 });
@@ -64,6 +64,6 @@ app.get('/',(req,res)=>{
 
 
 
-app.listen(port,()=>{
+app.listen(port, () => {
   console.log(`server port:${port}`);
 });
